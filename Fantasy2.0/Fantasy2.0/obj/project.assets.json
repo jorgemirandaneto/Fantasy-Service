@@ -13552,24 +13552,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jorge.miranda\\.nuget\\packages\\": {},
+    "C:\\Users\\jorge\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\jorge.miranda\\Documents\\Projetos\\Fantasy-Back-End\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
+      "projectUniqueName": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
       "projectName": "Fantasy2",
-      "projectPath": "C:\\Users\\jorge.miranda\\Documents\\Projetos\\Fantasy-Back-End\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
-      "packagesPath": "C:\\Users\\jorge.miranda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jorge.miranda\\Documents\\Projetos\\Fantasy-Back-End\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\obj\\",
+      "projectPath": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
+      "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jorge.miranda\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13643,7 +13649,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: Npgsql.EntityFramework 2.2.7 requires Npgsql (= 2.2.7) but version Npgsql 4.0.2 was resolved.",
+      "message": "Versão detectada do pacote fora da restrição de dependência: Npgsql.EntityFramework 2.2.7 requer Npgsql (= 2.2.7), mas a versão Npgsql 4.0.2 foi resolvida.",
       "libraryId": "Npgsql",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -13653,7 +13659,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'EntityFramework 6.2.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "message": "O pacote 'EntityFramework 6.2.0' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "EntityFramework",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -13663,7 +13669,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'EntityFramework6.Npgsql 3.2.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "message": "O pacote 'EntityFramework6.Npgsql 3.2.0' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "EntityFramework6.Npgsql",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -13673,7 +13679,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Npgsql.EntityFramework 2.2.7' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "message": "O pacote 'Npgsql.EntityFramework 2.2.7' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Npgsql.EntityFramework",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"

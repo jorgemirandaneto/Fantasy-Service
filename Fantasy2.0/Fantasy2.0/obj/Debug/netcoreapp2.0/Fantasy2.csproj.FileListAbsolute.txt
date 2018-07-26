@@ -20,3 +20,14 @@ C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy-Back-End\Fant
 C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.runtimeconfig.dev.json
 C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.dll
 C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.pdb
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.deps.json
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.runtimeconfig.json
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.runtimeconfig.dev.json
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.dll
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.pdb
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.csprojResolveAssemblyReference.cache
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.csproj.CoreCompileInputs.cache
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.AssemblyInfoInputs.cache
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.AssemblyInfo.cs
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.dll
+C:\Users\jorge\Documents\Desenvolvimento\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.pdb
