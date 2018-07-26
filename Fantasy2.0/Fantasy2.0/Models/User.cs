@@ -17,8 +17,6 @@ namespace Fantasy2.Models
 
         public string senha { get; set; }
 
-        [ForeignKey("Participante")]
         public int fkparticipante { get; set; }
-        public virtual Participante Participante { get; set; }
     }
 }
