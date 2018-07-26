@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fantasy2.Models
 {
-    [Table("user", Schema = "fantasy")]
+    [Table("acessuser", Schema = "fantasy")]
     public class User
     {
         [Key]
