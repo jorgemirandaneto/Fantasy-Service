@@ -63,7 +63,6 @@ namespace Fantasy2.Controllers
 
             _participante.nome = participante.nome;
             _participante.email = participante.email;
-            _participante.senha = participante.senha;
 
             _context.Participantes.Update(_participante);
             _context.SaveChanges();
