@@ -43,6 +43,11 @@ namespace Fantasy2._0
                     .Configure(tokenConfigurations);
             services.AddSingleton(tokenConfigurations);
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("local", policy => policy.WithOrigins("http://localhost:50928/api/"));
+            });
+
 
             services.AddAuthentication(authOptions =>
             {
