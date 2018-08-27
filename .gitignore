@@ -6,6 +6,9 @@
 *.user
 *.userosscache
 *.sln.docstates
+Fantasy2-0.v3.ncrunchsolution.user
+Fantasy2.v3.ncrunchsolution.user
+Fantasy2.0.v3.ncrunchsolution.user
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
