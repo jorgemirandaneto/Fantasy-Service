@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 using Fantasy2.Context;
 using Fantasy2.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fantasy2.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Participantes")]    
+    [Route("api/Participantes")]
+    [EnableCors("AllowSpecificOrigin")]
     public class ParticipantesController : ControllerBase
     {
         private readonly FantasyContext _context;
