@@ -17,8 +17,5 @@ namespace Fantasy2.Models
 
         [Required(ErrorMessage = "Obrigatório informar o Email do Participante")]
         public string email { get; set; }
-
-        [Required(ErrorMessage = "Obrigatório informar o Senha do Participante")]
-        public string senha { get; set; }
     }
 }

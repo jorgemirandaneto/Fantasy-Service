@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fantasy2.Models
 {
-    [Table("user", Schema = "fantasy")]
+    [Table("acessuser", Schema = "fantasy")]
     public class User
     {
         [Key]
@@ -17,8 +17,6 @@ namespace Fantasy2.Models
 
         public string senha { get; set; }
 
-        [ForeignKey("Participante")]
         public int fkparticipante { get; set; }
-        public virtual Participante Participante { get; set; }
     }
 }
