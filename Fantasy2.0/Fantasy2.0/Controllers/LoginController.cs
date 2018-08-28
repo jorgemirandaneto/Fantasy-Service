@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
+using System.Text;
 using System.Threading.Tasks;
 using Fantasy2.Dao;
 using Fantasy2.Models;
@@ -17,20 +18,18 @@ using Newtonsoft.Json;
 
 namespace Fantasy2.Controllers
 {
-    [Route("api/[controller]")]
-    [EnableCors("AllowSpecificOrigin")]
+    [Route("api/Login")]
     public class LoginController : Controller
     {
         [AllowAnonymous]
-        [HttpPost]
+        [HttpPost,Route("login")]
         [EnableCors("AllowSpecificOrigin")]
-        public object Post(
+        public IActionResult Login(
             [FromBody]User usuario,
-            [FromServices]UserDao usersDao,
-            [FromServices]SigningConfigurations signingConfigurations,
-            [FromServices]TokenConfigurations tokenConfigurations)
+            [FromServices]UserDao usersDao)
         {
-            bool credenciaisValidas = false;
+            bool credenciaisValidas = true;
+            
             if (usuario != null)
             {
                 var usuarioBase = usersDao.find(usuario);
@@ -41,46 +40,23 @@ namespace Fantasy2.Controllers
 
             if (credenciaisValidas)
             {
-                ClaimsIdentity identity = new ClaimsIdentity(
-                    //new GenericIdentity(usuario.nome, "Login"),
-                    new[] {
-                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
-                        new Claim(JwtRegisteredClaimNames.UniqueName, usuario.nome)
-                    }
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+                var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+
+                var tokeOptions = new JwtSecurityToken(
+                    issuer: "http://localhost:5000",
+                    audience: "http://localhost:5000",
+                    claims: new List<Claim>(),
+                    expires: DateTime.Now.AddMinutes(60),
+                    signingCredentials: signinCredentials
                 );
 
-                DateTime dataCriacao = DateTime.Now;
-                DateTime dataExpiracao = dataCriacao +
-                    TimeSpan.FromSeconds(tokenConfigurations.Seconds);
-
-                var handler = new JwtSecurityTokenHandler();
-                var securityToken = handler.CreateToken(new SecurityTokenDescriptor
-                {
-                    Issuer = tokenConfigurations.Issuer,
-                    Audience = tokenConfigurations.Audience,
-                    SigningCredentials = signingConfigurations.SigningCredentials,
-                    Subject = identity,
-                    NotBefore = dataCriacao,
-                    Expires = dataExpiracao
-                });
-                var token = handler.WriteToken(securityToken);
-
-                return new
-                {
-                    authenticated = true,
-                    created = dataCriacao.ToString("yyyy-MM-dd HH:mm:ss"),
-                    expiration = dataExpiracao.ToString("yyyy-MM-dd HH:mm:ss"),
-                    accessToken = token,
-                    message = "OK"
-                };
+                var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+                return Ok(new { Token = tokenString });
             }
             else
             {
-                return new
-                {
-                    authenticated = false,
-                    message = "Falha ao autenticar"
-                };
+                return Unauthorized();
             }
         }
     }
