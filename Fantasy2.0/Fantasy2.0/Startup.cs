@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Fantasy2.Context;
 using Fantasy2.Dao;
 using Fantasy2.Models;
@@ -34,6 +31,8 @@ namespace Fantasy2._0
 
             services.AddTransient<UserDao>();
 
+            services.AddCors();               
+
             var signingConfigurations = new SigningConfigurations();
             services.AddSingleton(signingConfigurations);
 
@@ -42,7 +41,6 @@ namespace Fantasy2._0
                 Configuration.GetSection("TokenConfigurations"))
                     .Configure(tokenConfigurations);
             services.AddSingleton(tokenConfigurations);
-
 
             services.AddAuthentication(authOptions =>
             {
@@ -81,13 +79,24 @@ namespace Fantasy2._0
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            
+            app.UseCors(builder => builder
+           .AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader()
+           .AllowCredentials());
             app.UseMvc();
+
+
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole();
+            loggerFactory.AddDebug();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Fantasy2.Dao;
 using Fantasy2.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
@@ -17,10 +18,12 @@ using Newtonsoft.Json;
 namespace Fantasy2.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowSpecificOrigin")]
     public class LoginController : Controller
     {
         [AllowAnonymous]
         [HttpPost]
+        [EnableCors("AllowSpecificOrigin")]
         public object Post(
             [FromBody]User usuario,
             [FromServices]UserDao usersDao,
