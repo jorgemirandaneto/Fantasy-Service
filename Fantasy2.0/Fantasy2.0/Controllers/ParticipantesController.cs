@@ -25,7 +25,6 @@ namespace Fantasy2.Controllers
         }
 
         // GET: api/Participantes
-        [Authorize("Bearer")]
         [HttpGet]
         public IEnumerable<Participante> Get()
         {
