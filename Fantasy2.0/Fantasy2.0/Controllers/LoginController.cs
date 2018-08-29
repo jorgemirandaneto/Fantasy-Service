@@ -18,8 +18,9 @@ using Newtonsoft.Json;
 
 namespace Fantasy2.Controllers
 {
-    [Route("api/Login")]
-    public class LoginController : Controller
+    [Route("api/[controller]")]
+    [EnableCors("AllowSpecificOrigin")]
+    public class LoginController : ControllerBase
     {
         [AllowAnonymous]
         [HttpPost,Route("login")]
