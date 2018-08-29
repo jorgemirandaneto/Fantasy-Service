@@ -7242,7 +7242,7 @@
       ]
     },
     "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
-      "sha512": "H6ZsQzxYw/6k2DfEQRXdC+vQ6obd6Uba3uGJrnJ2vG4PRXjQZ7seB13JdCfE72abp8E6Fk3gGgDzfJiLZi5ZpQ==",
+      "sha512": "UMlN++q5qqzQ2HH+uOrKxN5fmBXMQDhrYkSaPJxhmyzfJaFPirrVr1raim/Ocq1psAZoB9+7JSAf0GDAX35wUg==",
       "type": "package",
       "path": "microsoft.extensions.platformabstractions/1.1.0",
       "files": [
@@ -13552,30 +13552,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jorge\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\jorge.miranda\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
+      "projectUniqueName": "C:\\Users\\jorge.miranda\\Documents\\Projetos\\Fantasy-Back-End\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
       "projectName": "Fantasy2",
-      "projectPath": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
-      "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\obj\\",
+      "projectPath": "C:\\Users\\jorge.miranda\\Documents\\Projetos\\Fantasy-Back-End\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
+      "packagesPath": "C:\\Users\\jorge.miranda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jorge.miranda\\Documents\\Projetos\\Fantasy-Back-End\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\jorge.miranda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

@@ -19,7 +19,7 @@ namespace Fantasy2.Controllers
 {
     [Route("api/[controller]")]
     [EnableCors("AllowSpecificOrigin")]
-    public class LoginController : Controller
+    public class LoginController : ControllerBase
     {
         [AllowAnonymous]
         [HttpPost]
