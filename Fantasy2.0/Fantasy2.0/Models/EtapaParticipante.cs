@@ -27,5 +27,11 @@ namespace Fantasy2.Models
 
         [Required(ErrorMessage = "Obrigatório informar o Ano da Etapa")]
         public int Ano { get; set; }
+
+        [NotMapped]
+        public IEnumerable<Etapa> Etapas { get; set; }
+         
+         [NotMapped]
+        public IEnumerable<Participante> Participantes { get; set; }
     }
 }
