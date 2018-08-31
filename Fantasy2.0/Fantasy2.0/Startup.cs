@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Fantasy2.Context;
 using Fantasy2.Dao;
 using Fantasy2.Models;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Fantasy2._0
 {
@@ -29,68 +31,49 @@ namespace Fantasy2._0
             services.AddEntityFrameworkNpgsql()
            .AddDbContext<FantasyContext>(options => options.UseNpgsql(Configuration.GetConnectionString("FantasyConection")));
 
+
             services.AddTransient<UserDao>();
 
-            services.AddCors();               
-
-            var signingConfigurations = new SigningConfigurations();
-            services.AddSingleton(signingConfigurations);
-
-            var tokenConfigurations = new TokenConfigurations();
-            new ConfigureFromConfigurationOptions<TokenConfigurations>(
-                Configuration.GetSection("TokenConfigurations"))
-                    .Configure(tokenConfigurations);
-            services.AddSingleton(tokenConfigurations);
-
-            services.AddAuthentication(authOptions =>
+            services.AddCors(options =>
             {
-                authOptions.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                authOptions.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(bearerOptions =>
-            {
-                var paramsValidation = bearerOptions.TokenValidationParameters;
-                paramsValidation.IssuerSigningKey = signingConfigurations.Key;
-                paramsValidation.ValidAudience = tokenConfigurations.Audience;
-                paramsValidation.ValidIssuer = tokenConfigurations.Issuer;
-
-                // Valida a assinatura de um token recebido
-                paramsValidation.ValidateIssuerSigningKey = true;
-
-                // Verifica se um token recebido ainda é válido
-                paramsValidation.ValidateLifetime = true;
-
-                // Tempo de tolerância para a expiração de um token (utilizado
-                // caso haja problemas de sincronismo de horário entre diferentes
-                // computadores envolvidos no processo de comunicação)
-                paramsValidation.ClockSkew = TimeSpan.Zero;
+                options.AddPolicy("AllowSpecificOrigin",
+                builder => builder.WithOrigins("*"));
             });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+               .AddJwtBearer(options =>
+               {
+                   options.TokenValidationParameters = new TokenValidationParameters
+                   {
+                       ValidateIssuer = true,
+                       ValidateAudience = true,
+                       ValidateLifetime = true,
+                       ValidateIssuerSigningKey = true,
 
-            // Ativa o uso do token como forma de autorizar o acesso
-            // a recursos deste projeto
-            services.AddAuthorization(auth =>
-            {
-                auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
-                    .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-                    .RequireAuthenticatedUser().Build());
-            });
+                       ValidIssuer = "http://localhost:5000",
+                       ValidAudience = "http://localhost:5000",
+                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+                   };
+               });
 
 
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            
             app.UseCors(builder => builder
-           .AllowAnyOrigin()
-           .AllowAnyMethod()
-           .AllowAnyHeader()
-           .AllowCredentials());
+          .AllowAnyOrigin()
+          .AllowAnyMethod()
+          .AllowAnyHeader()
+          .AllowCredentials());
+
+            app.UseAuthentication();
+
             app.UseMvc();
 
 
