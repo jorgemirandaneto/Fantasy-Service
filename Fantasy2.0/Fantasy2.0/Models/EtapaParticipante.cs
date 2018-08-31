@@ -31,7 +31,7 @@ namespace Fantasy2.Models
         [NotMapped]
         public IEnumerable<Etapa> Etapas { get; set; }
          
-         [NotMapped]
+        [NotMapped]
         public IEnumerable<Participante> Participantes { get; set; }
     }
 }

@@ -4,6 +4,6 @@ namespace Fantasy2.Models
 {
     public class EtapaParticipanteVM
     {
-    public IEnumerable<EtapaParticipante> etapasParticipantes { get; set; }
+    public List<EtapaParticipante> etapasParticipantes { get; set; }
     }
 }

@@ -19,11 +19,11 @@ namespace Fantasy2.Controllers
             _context = context;
         }
         [HttpGet("{idEtapa}"), Route("NotasEtapas")]
-        public EtapaParticipanteVM getNota(int idEtapa)
+        public List<EtapaParticipante> getNota(int idEtapa = 0)
         {
             try
             {
-                var NotasEtapas = from nota in _context.EtapaParticipantes
+                var NotasEtapas = (from nota in _context.EtapaParticipantes
                                   where (nota.Id == idEtapa)
                                   select new EtapaParticipante
                                   {
@@ -41,18 +41,20 @@ namespace Fantasy2.Controllers
                                                        where p.id == nota.FKParticipante
                                                        select new Participante
                                                        {
+                                                           id =p.id,
                                                            nome = p.nome,
+                                                           email = p.email
                                                        }
                                      )
-                                  };
-                if (idEtapa != null)
-                    NotasEtapas = NotasEtapas.Where(n => n.FKEtapa == idEtapa);
+                                  }).ToList();
+                // if (idEtapa > 0)
+                //     NotasEtapas = NotasEtapas.Where(n => n.FKEtapa == idEtapa);
 
-                var etapa = new EtapaParticipanteVM
-                {
-                    etapasParticipantes = NotasEtapas
-                };
-                return etapa;
+                // var etapa = new EtapaParticipanteVM
+                // {
+                //     etapasParticipantes = NotasEtapas;
+                // };
+                return NotasEtapas;
             }
             catch (System.Exception)
             {
