@@ -24,8 +24,8 @@ namespace Fantasy2.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Participante>().HasKey(c => c.id);
-            modelBuilder.Entity<Etapa>().HasKey(c => c.Id);
-            modelBuilder.Entity<EtapaParticipante>().HasKey(c => c.Id);
+            modelBuilder.Entity<Etapa>().HasKey(c => c.id);
+            modelBuilder.Entity<EtapaParticipante>().HasKey(c => c.id);
             modelBuilder.Entity<User>().HasKey(c => c.id);
         }
     }

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Fantasy2.Models
 {
-    [Table("ETAPA", Schema = "FANTASY")]
+    [Table("etapa", Schema = "fantasy")]
     public class Etapa
     {
         [Key]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o Nome da Etapa")]
         [StringLength(255, ErrorMessage = "O tamanho máximo do Nome da Etapa é de 255 caracteres")]
-        public string Nome { get; set; }        
+        public string nome { get; set; }        
     }
 }

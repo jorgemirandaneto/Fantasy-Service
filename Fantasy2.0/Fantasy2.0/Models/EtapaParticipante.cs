@@ -8,25 +8,27 @@ using System.Threading.Tasks;
 
 namespace Fantasy2.Models
 {
-    [Table("ETAPAPARTICIPANTE", Schema = "FANTASY")]
+    [Table("etapaparticipante", Schema = "fantasy")]
     public class EtapaParticipante
     {
         [Key]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [ForeignKey("Participante")]
-        public int FKParticipante { get; set; }
+        public int fk_participante { get; set; }
+        [NotMapped]
         public virtual Participante Participante { get; set; }
 
         [ForeignKey("Etapa")]
-        public int FKEtapa { get; set; }
+        public int fk_etapa { get; set; }
+        [NotMapped]
         public virtual Etapa Etapa { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a pontuacao do participante")]
-        public double Pontuacao { get; set; }
+        public double nota { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o Ano da Etapa")]
-        public int Ano { get; set; }
+        public int ano { get; set; }
 
         [NotMapped]
         public IEnumerable<Etapa> Etapas { get; set; }
