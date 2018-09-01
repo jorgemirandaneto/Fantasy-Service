@@ -50,8 +50,6 @@ namespace Fantasy2.Controllers
                                                        }
                                      )
                                   }).ToList();
-                // if (idEtapa > 0)
-                //     NotasEtapas = NotasEtapas.Where(n => n.fk_etapa == idEtapa).ToList();
 
                 var etapa = new EtapaParticipanteVM
                 {
