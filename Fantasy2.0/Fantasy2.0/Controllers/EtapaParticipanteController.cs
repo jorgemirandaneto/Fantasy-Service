@@ -19,26 +19,29 @@ namespace Fantasy2.Controllers
             _context = context;
         }
         [HttpGet("{idEtapa}"), Route("NotasEtapas")]
-        public List<EtapaParticipante> getNota(int idEtapa = 0)
-        {
+        public IEnumerable<EtapaParticipante> getNota(int idEtapa)
+        {       
             try
             {
                 var NotasEtapas = (from nota in _context.EtapaParticipantes
-                                  where (nota.Id == idEtapa)
+                                  where (nota.fk_etapa == idEtapa)
                                   select new EtapaParticipante
                                   {
-                                      Pontuacao = nota.Pontuacao,
-                                      Ano = nota.Ano,
+                                      id = nota.id,
+                                      nota = nota.nota,
+                                      ano = nota.ano,
+                                      fk_etapa =nota.fk_etapa,
+                                      fk_participante = nota.fk_participante,
                                       Etapas = (from e in _context.Etapas
-                                                where e.Id == nota.FKEtapa
+                                                where e.id == nota.fk_etapa
                                                 select new Etapa
                                                 {
-                                                    Id = e.Id,
-                                                    Nome = e.Nome
+                                                    id = e.id,
+                                                    nome = e.nome
                                                 }
                                      ),
                                       Participantes = (from p in _context.Participantes
-                                                       where p.id == nota.FKParticipante
+                                                       where p.id == nota.fk_participante
                                                        select new Participante
                                                        {
                                                            id =p.id,
@@ -48,20 +51,19 @@ namespace Fantasy2.Controllers
                                      )
                                   }).ToList();
                 // if (idEtapa > 0)
-                //     NotasEtapas = NotasEtapas.Where(n => n.FKEtapa == idEtapa);
+                //     NotasEtapas = NotasEtapas.Where(n => n.fk_etapa == idEtapa).ToList();
 
-                // var etapa = new EtapaParticipanteVM
-                // {
-                //     etapasParticipantes = NotasEtapas;
-                // };
-                return NotasEtapas;
+                var etapa = new EtapaParticipanteVM
+                {
+                    etapasParticipantes = NotasEtapas
+                };
+                return NotasEtapas;                      
             }
             catch (System.Exception)
             {
+                
                 throw;
-            }
-        }
-
-
+            }                 
+        }        
     }
 }

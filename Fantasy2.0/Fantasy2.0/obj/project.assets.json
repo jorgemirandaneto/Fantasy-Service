@@ -7896,10 +7896,10 @@
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
         "LICENSE.TXT",
+        "Microsoft.NETCore.Platforms.2.0.0.nupkg.sha512",
+        "Microsoft.NETCore.Platforms.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-        "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -13559,19 +13559,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
       "projectName": "Fantasy2",
       "projectPath": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
       "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\obj\\",
-=======
-      "projectUniqueName": "c:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
-      "projectName": "Fantasy2",
-      "projectPath": "c:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\Fantasy2.csproj",
-      "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\obj\\",
->>>>>>> master
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -13650,6 +13642,12 @@
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\jorge\\Documents\\Desenvolvimento\\Fantasy-Back-End\\Fantasy2.0\\Fantasy2.0\\obj\\Fantasy2.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1608",
       "level": "Warning",
