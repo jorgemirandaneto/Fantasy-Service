@@ -1,4 +1,5 @@
 ﻿using Fantasy2.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,12 +17,12 @@ namespace Fantasy2.Models
 
         [ForeignKey("Participante")]
         public int fk_participante { get; set; }
-        [NotMapped]
+        [JsonIgnore]
         public virtual Participante Participante { get; set; }
 
         [ForeignKey("Etapa")]
         public int fk_etapa { get; set; }
-        [NotMapped]
+        [JsonIgnore]
         public virtual Etapa Etapa { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a pontuacao do participante")]
