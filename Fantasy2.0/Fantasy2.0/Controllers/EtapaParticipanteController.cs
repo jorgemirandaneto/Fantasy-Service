@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fantasy2.Controllers
 {
     [Route("api/[controller]")]
-    [EnableCors("AllowSpecificOrigin")]
+    [EnableCors("AllowSpecificOrigin")]   
+    [Authorize()] 
     public class EtapaParticipanteController : ControllerBase
     {
         private readonly FantasyContext _context;
@@ -50,11 +52,6 @@ namespace Fantasy2.Controllers
                                                        }
                                      )
                                   }).ToList();
-
-                var etapa = new EtapaParticipanteVM
-                {
-                    etapasParticipantes = NotasEtapas
-                };
                 return NotasEtapas;                      
             }
             catch (System.Exception)
