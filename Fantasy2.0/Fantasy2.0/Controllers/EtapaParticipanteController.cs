@@ -51,12 +51,11 @@ namespace Fantasy2.Controllers
                                                            email = p.email
                                                        }
                                      )
-                                  }).ToList();
+                                  }).OrderByDescending(o => o.nota).ToList();
                 return NotasEtapas;                      
             }
             catch (System.Exception)
-            {
-                
+            {                
                 throw;
             }                 
         }        
