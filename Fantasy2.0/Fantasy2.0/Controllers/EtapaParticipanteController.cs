@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fantasy2.Controllers
 {
     [Route("api/[controller]")]
-    [EnableCors("AllowSpecificOrigin")]
+    [EnableCors("AllowSpecificOrigin")]   
+    [Authorize()] 
     public class EtapaParticipanteController : ControllerBase
     {
         private readonly FantasyContext _context;
@@ -49,19 +51,23 @@ namespace Fantasy2.Controllers
                                                            email = p.email
                                                        }
                                      )
-                                  }).ToList();
-
-                var etapa = new EtapaParticipanteVM
-                {
-                    etapasParticipantes = NotasEtapas
-                };
+                                  }).OrderByDescending(o => o.nota).ToList();
                 return NotasEtapas;                      
             }
             catch (System.Exception)
-            {
-                
+            {                
                 throw;
             }                 
+        }
+        [HttpGet(),Route("Etapa")]
+        public IEnumerable<Etapa> getEtapa(){
+            var etapa = (from e in _context.Etapas
+            select new Etapa{
+                id = e.id,
+                nome = e.nome
+            }
+            ).ToList();
+            return etapa;                      
         }        
     }
 }
