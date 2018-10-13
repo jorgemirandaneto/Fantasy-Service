@@ -58,6 +58,16 @@ namespace Fantasy2.Controllers
             {                
                 throw;
             }                 
+        }
+        [HttpGet(),Route("Etapa")]
+        public IEnumerable<Etapa> getEtapa(){
+            var etapa = (from e in _context.Etapas
+            select new Etapa{
+                id = e.id,
+                nome = e.nome
+            }
+            ).ToList();
+            return etapa;                      
         }        
     }
 }
