@@ -20,6 +20,15 @@ namespace Fantasy2.Controllers
         {
             _context = context;
         }
+
+        public IActionResult Post([FromBody] EtapaParticipante etapaParticipante){
+            if(etapaParticipante.fk_participante.ToString() == null)
+                return NotFound();
+            _context.Add(etapaParticipante);
+            _context.SaveChanges();
+            return NoContent();
+        }
+        
         [HttpGet("{idEtapa}"), Route("NotasEtapas")]
         public IEnumerable<EtapaParticipante> getNota(int idEtapa)
         {       
@@ -66,7 +75,7 @@ namespace Fantasy2.Controllers
                 id = e.id,
                 nome = e.nome
             }
-            ).ToList();
+            ).OrderBy(o => o.id).ToList();
             return etapa;                      
         }        
     }
