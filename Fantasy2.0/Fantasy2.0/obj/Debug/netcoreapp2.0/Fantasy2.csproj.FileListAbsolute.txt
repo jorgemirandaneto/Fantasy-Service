@@ -42,3 +42,14 @@ C:\Users\jorge\OneDrive\Documentos\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2
 C:\Users\jorge\OneDrive\Documentos\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.AssemblyInfo.cs
 C:\Users\jorge\OneDrive\Documentos\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.dll
 C:\Users\jorge\OneDrive\Documentos\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.pdb
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.deps.json
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.runtimeconfig.json
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.runtimeconfig.dev.json
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.dll
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\bin\Debug\netcoreapp2.0\Fantasy2.pdb
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.csprojAssemblyReference.cache
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.csproj.CoreCompileInputs.cache
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.AssemblyInfoInputs.cache
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.AssemblyInfo.cs
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.dll
+C:\Users\jorge.miranda\Documents\Projetos\Fantasy-Back-End\Fantasy2.0\Fantasy2.0\obj\Debug\netcoreapp2.0\Fantasy2.pdb
