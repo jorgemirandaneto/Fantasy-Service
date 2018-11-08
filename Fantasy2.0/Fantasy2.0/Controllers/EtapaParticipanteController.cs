@@ -20,7 +20,7 @@ namespace Fantasy2.Controllers
         {
             _context = context;
         }
-
+        [HttpPost]
         public IActionResult Post([FromBody] EtapaParticipante etapaParticipante){
             if(etapaParticipante.fk_participante.ToString() == null)
                 return NotFound();
@@ -74,9 +74,9 @@ namespace Fantasy2.Controllers
             select new Etapa{
                 id = e.id,
                 nome = e.nome
-            }
+            }   
             ).OrderBy(o => o.id).ToList();
             return etapa;                      
-        }        
-    }
+        }         
+    }    
 }
