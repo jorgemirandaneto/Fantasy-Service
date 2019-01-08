@@ -6,24 +6,38 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using Fantasy2.Dao;
 
 namespace Fantasy2.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/EtapaParticipante")]
     [EnableCors("AllowSpecificOrigin")]   
-    [Authorize()] 
     public class EtapaParticipanteController : ControllerBase
     {
         private readonly FantasyContext _context;
-
-        public EtapaParticipanteController(FantasyContext context)
+        private EtapaParticipanteDao _etapa;
+        public EtapaParticipanteController(FantasyContext context, EtapaParticipanteDao etapa)
         {
             _context = context;
+            _etapa = etapa;
         }
-        [HttpPost]
+
+        [EnableCors("AllowSpecificOrigin")]  
+        [HttpPost, Route("SalvarNota")]
         public IActionResult Post([FromBody] EtapaParticipante etapaParticipante){
             if(etapaParticipante.fk_participante.ToString() == null)
                 return NotFound();
+
+            
+            bool notaExistente = _etapa.validarNotaExistente(etapaParticipante.fk_etapa, etapaParticipante.fk_participante, DateTime.Now.Year);
+            if(!notaExistente)
+                return NotFound("A nota desse participante já foi preenchida!");
+
+            EtapaParticipante e = new EtapaParticipante();
+            e.fk_etapa = etapaParticipante.fk_etapa;
+            e.fk_participante = etapaParticipante.fk_participante;
+            e.nota = etapaParticipante.nota;
+            e.ano = DateTime.Now.Year;                
             _context.Add(etapaParticipante);
             _context.SaveChanges();
             return NoContent();

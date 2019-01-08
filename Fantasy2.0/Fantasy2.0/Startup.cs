@@ -37,7 +37,7 @@ namespace Fantasy2._0
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",
-                builder => builder.WithOrigins("*"));
+                builder => builder.WithOrigins());
             });
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                .AddJwtBearer(options =>
