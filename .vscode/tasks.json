@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Fantasy2.0/Fantasy2.csproj"
+                "${workspaceFolder}/Fantasy2.0/Fantasy2.0/Fantasy2.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
