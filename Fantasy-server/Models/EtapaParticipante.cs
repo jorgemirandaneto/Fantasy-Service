@@ -11,23 +11,19 @@ namespace Fantasy_server.Models
     [Table("etapaparticipante", Schema = "develop")]
     public class EtapaParticipante
     {
-        [Key]
         public int id { get; set; }
 
-        [ForeignKey("Participante")]
         public int fk_participante { get; set; }
         [JsonIgnore]
         public virtual Participante Participante { get; set; }
 
-        [ForeignKey("Etapa")]
         public int fk_etapa { get; set; }
         [JsonIgnore]
         public virtual Etapa Etapa { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar a pontuacao do participante")]
+
         public double nota { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o Ano da Etapa")]
         public int ano { get; set; }
 
         [NotMapped]

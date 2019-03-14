@@ -10,12 +10,9 @@ namespace Fantasy_server.Models
     [Table("participante", Schema = "develop")]
     public class Participante
     {
-        [Key]
         public int id { get; set; }
 
         public string nome { get; set; }
-
-        [Required(ErrorMessage = "Obrigatório informar o Email do Participante")]
         public string email { get; set; }
     }
 }
