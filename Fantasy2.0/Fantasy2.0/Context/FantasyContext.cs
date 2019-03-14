@@ -1,11 +1,5 @@
 ﻿using Fantasy2.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Fantasy2.Context
 {
@@ -23,7 +17,7 @@ namespace Fantasy2.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Participante>().HasKey(c => c.id);
+            modelBuilder.Entity<Participante>().HasKey(c => c.id);            
             modelBuilder.Entity<Etapa>().HasKey(c => c.id);
             modelBuilder.Entity<EtapaParticipante>().HasKey(c => c.id);
             modelBuilder.Entity<User>().HasKey(c => c.id);

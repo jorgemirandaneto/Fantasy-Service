@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace Fantasy2.Models
 {
-    [Table("participante", Schema = "fantasy")]
+
     public class Participante
     {
-        [Key]
         public int id { get; set; }
 
         public string nome { get; set; }
-
-        [Required(ErrorMessage = "Obrigatório informar o Email do Participante")]
         public string email { get; set; }
     }
 }
