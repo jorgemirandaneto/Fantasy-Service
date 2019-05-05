@@ -26,6 +26,8 @@ namespace Fantasy_server.Migrations
                     table.PrimaryKey("PK_acessuser", x => x.id);
                 });
 
+
+
             migrationBuilder.CreateTable(
                 name: "etapa",
                 schema: "develop",
@@ -56,7 +58,7 @@ namespace Fantasy_server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "etapaparticipante",
+                name: "'etapaparticipante'",
                 schema: "develop",
                 columns: table => new
                 {

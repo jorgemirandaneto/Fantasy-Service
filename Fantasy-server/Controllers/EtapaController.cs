@@ -15,11 +15,9 @@ namespace Fantasy_server.Controllers
     public class EtapaController : ControllerBase
     {
         private readonly FantasyContext _context;
-        private readonly EtapaParticipanteDao _etapa;
-        public EtapaController(FantasyContext context, EtapaParticipanteDao etapa)
+        public EtapaController(FantasyContext context)
         {
-            this._context = context;
-            this._etapa = etapa;
+            this._context = context;            
         }
 
          [HttpPost, Route("SalvarNota")]
@@ -29,22 +27,23 @@ namespace Fantasy_server.Controllers
             if(etapaParticipante.fk_participante.ToString() == null)
                 return NotFound();
 
-            
-            bool notaExistente = _etapa.validarNotaExistente(etapaParticipante.fk_etapa, etapaParticipante.fk_participante, DateTime.Now.Year);
-            if(!notaExistente)
+            var etapa = new EtapaParticipanteDao(_context);
+            bool notaExistente = etapa.validarNotaExistente(etapaParticipante.fk_etapa, etapaParticipante.fk_participante, DateTime.Now.Year);
+            if(notaExistente)
                 return NotFound("A nota desse participante já foi preenchida!");
 
             EtapaParticipante e = new EtapaParticipante();
+            
             e.fk_etapa = etapaParticipante.fk_etapa;
             e.fk_participante = etapaParticipante.fk_participante;
             e.nota = etapaParticipante.nota;
-            e.ano = DateTime.Now.Year;                
-            _context.Add(etapaParticipante);
+            e.ano = DateTime.Now.Year;           
+            _context.EtapaParticipantes.Add(etapaParticipante);
             _context.SaveChanges();
             return NoContent();
         }
         
-        [HttpGet("{idEtapa}"), Route("NotasEtapas")]
+        [HttpGet, Route("NotasEtapas/{idEtapa}")]
         public IEnumerable<EtapaParticipante> getNota(int idEtapa)
         {       
             try

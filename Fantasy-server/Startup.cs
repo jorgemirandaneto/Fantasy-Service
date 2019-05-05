@@ -37,6 +37,7 @@ namespace Fantasy_server
            .AddDbContext<FantasyContext>(options => options.UseNpgsql(Configuration.GetConnectionString("FantasyConection")));
 
             services.AddTransient<UserDao>();
+            services.AddTransient<EtapaParticipanteDao>();
 
             services.AddCors(options =>
             {
@@ -75,7 +76,7 @@ namespace Fantasy_server
           .AllowCredentials());
             
             app.UseAuthentication();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
