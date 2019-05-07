@@ -15,10 +15,14 @@ namespace Fantasy_server.Models
 
         public int fk_participante { get; set; }
         [JsonIgnore]
+
+        [ForeignKey("fk_participante")]
         public virtual Participante Participante { get; set; }
 
         public int fk_etapa { get; set; }
         [JsonIgnore]
+
+        [ForeignKey("fk_etapa")]
         public virtual Etapa Etapa { get; set; }
 
 
