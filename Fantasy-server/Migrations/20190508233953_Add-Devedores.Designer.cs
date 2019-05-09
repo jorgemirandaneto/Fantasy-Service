@@ -2,15 +2,17 @@
 using Fantasy_server.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Fantasy_server.Migrations
 {
     [DbContext(typeof(FantasyContext))]
-    partial class FantasyContextModelSnapshot : ModelSnapshot
+    [Migration("20190508233953_Add-Devedores")]
+    partial class AddDevedores
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +40,7 @@ namespace Fantasy_server.Migrations
 
                     b.HasIndex("fk_participante_perdedor");
 
-                    b.ToTable("devedores","develop");
+                    b.ToTable("Devedores");
                 });
 
             modelBuilder.Entity("Fantasy_server.Models.Etapa", b =>

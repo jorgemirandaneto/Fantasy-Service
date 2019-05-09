@@ -89,5 +89,26 @@ namespace Fantasy_server.Controllers
             var etapa = _context.Etapas.ToList();
             return etapa;
         }
+
+        [HttpPost, Route("FinalizarEtapa/{idEtapa}")]
+        public IActionResult FanalizarEtapa(int idEtapa)
+        {
+            var etapaParticipanteDao = new EtapaParticipanteDao(_context);
+            if (!etapaParticipanteDao.ValidarParticipanteNota(idEtapa))
+                return NotFound("Alguns participantes não tem nota ainda");
+
+            var Vencedores = etapaParticipanteDao.Vencedores(idEtapa);
+            var Perdedores = etapaParticipanteDao.Perdedores(idEtapa);
+
+            for (int i = 0; i < Vencedores.Count(); i++)
+            {
+                Devedores d = new Devedores();
+                d.fk_participante_ganhardor = Vencedores.ElementAt(i).fk_participante;
+                d.fk_participante_perdedor = Perdedores.ElementAt(i).fk_participante;
+                _context.Devedores.Add(d);
+                _context.SaveChanges();
+            }
+            return Ok();
+        }
     }
 }
