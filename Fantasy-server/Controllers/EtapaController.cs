@@ -38,7 +38,7 @@ namespace Fantasy_server.Controllers
             e.fk_participante = etapaParticipante.fk_participante;
             e.nota = etapaParticipante.nota;
             e.ano = DateTime.Now.Year;
-            _context.EtapaParticipantes.Add(etapaParticipante);
+            _context.EtapaParticipantes.Add(e);
             _context.SaveChanges();
             return NoContent();
         }
