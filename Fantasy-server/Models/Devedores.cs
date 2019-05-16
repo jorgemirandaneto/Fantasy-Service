@@ -21,5 +21,9 @@ namespace Fantasy_server.Models
         
         [MaxLength(1)]
         public string pago { get; set; }
+
+        [ForeignKey("fk_etapa_devedores")]
+        public virtual Etapa etapa { get; set; }
+        public int fk_etapa_devedores { get; set; }
     }
 }
