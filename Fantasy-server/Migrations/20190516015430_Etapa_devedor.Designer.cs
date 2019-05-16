@@ -2,15 +2,17 @@
 using Fantasy_server.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Fantasy_server.Migrations
 {
     [DbContext(typeof(FantasyContext))]
-    partial class FantasyContextModelSnapshot : ModelSnapshot
+    [Migration("20190516015430_Etapa_devedor")]
+    partial class Etapa_devedor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,8 +37,6 @@ namespace Fantasy_server.Migrations
                         .HasDefaultValue("F");
 
                     b.HasKey("id");
-
-                    b.HasIndex("fk_etapa_devedores");
 
                     b.HasIndex("fk_participante_ganhardor");
 
@@ -111,11 +111,6 @@ namespace Fantasy_server.Migrations
 
             modelBuilder.Entity("Fantasy_server.Models.Devedores", b =>
                 {
-                    b.HasOne("Fantasy_server.Models.Etapa", "etapa")
-                        .WithMany()
-                        .HasForeignKey("fk_etapa_devedores")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("Fantasy_server.Models.Participante", "participante_ganhador")
                         .WithMany()
                         .HasForeignKey("fk_participante_ganhardor")

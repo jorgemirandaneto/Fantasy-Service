@@ -28,7 +28,6 @@ namespace Fantasy_server.Context
             modelBuilder.Entity<EtapaParticipante>().HasKey(c => c.id);
             modelBuilder.Entity<User>().HasKey(c => c.id);
             modelBuilder.Entity<Devedores>().HasKey(d => d.id);
-
             modelBuilder.Entity<Devedores>().Property(d => d.pago).HasDefaultValue("F");
         }
     }

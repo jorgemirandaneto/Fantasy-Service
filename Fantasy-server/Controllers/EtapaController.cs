@@ -105,6 +105,7 @@ namespace Fantasy_server.Controllers
                 Devedores d = new Devedores();
                 d.fk_participante_ganhardor = Vencedores.ElementAt(i).fk_participante;
                 d.fk_participante_perdedor = Perdedores.ElementAt(i).fk_participante;
+                d.fk_etapa_devedores = idEtapa;
                 _context.Devedores.Add(d);
                 _context.SaveChanges();
             }
