@@ -96,6 +96,8 @@ namespace Fantasy_server.Controllers
             var etapaParticipanteDao = new EtapaParticipanteDao(_context);
             if (!etapaParticipanteDao.ValidarParticipanteNota(idEtapa))
                 return NotFound("Alguns participantes não tem nota ainda");
+            else if (etapaParticipanteDao.EtapaFinalizada(idEtapa))
+                return NotFound("Essa etapa já foi finalizada");            
 
             var Vencedores = etapaParticipanteDao.Vencedores(idEtapa);
             var Perdedores = etapaParticipanteDao.Perdedores(idEtapa);
