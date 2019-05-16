@@ -37,13 +37,18 @@ namespace Fantasy_server.Dao
 
         public IEnumerable<EtapaParticipante> Vencedores(int idEtapa)
         {
-            return _fantasyContext.EtapaParticipantes.Where(x => x.fk_etapa == idEtapa && x.ano == DateTime.Now.Year).OrderByDescending(x => x.nota).Take(3).ToList();            
+            return _fantasyContext.EtapaParticipantes.Where(x => x.fk_etapa == idEtapa && x.ano == DateTime.Now.Year).OrderByDescending(x => x.nota).Take(3).ToList();
         }
 
         public IEnumerable<EtapaParticipante> Perdedores(int idEtapa)
         {
             var qtdParticipante = _fantasyContext.Participantes.Count();
             return _fantasyContext.EtapaParticipantes.Where(x => x.fk_etapa == idEtapa && x.ano == DateTime.Now.Year).OrderBy(x => x.nota).Take(3).OrderByDescending(x => x.nota).ToList();
+        }
+
+        public bool EtapaFinalizada(int idEtapa)
+        {
+            return _fantasyContext.Devedores.Any(x => x.fk_etapa_devedores == idEtapa);
         }
     }
 }
