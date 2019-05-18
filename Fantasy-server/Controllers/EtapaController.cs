@@ -97,7 +97,7 @@ namespace Fantasy_server.Controllers
             if (!etapaParticipanteDao.ValidarParticipanteNota(idEtapa))
                 return NotFound("Alguns participantes não tem nota ainda");
             else if (etapaParticipanteDao.EtapaFinalizada(idEtapa))
-                return NotFound("Essa etapa já foi finalizada");            
+                return NotFound("Essa etapa já foi finalizada");
 
             var Vencedores = etapaParticipanteDao.Vencedores(idEtapa);
             var Perdedores = etapaParticipanteDao.Perdedores(idEtapa);
@@ -112,6 +112,13 @@ namespace Fantasy_server.Controllers
                 _context.SaveChanges();
             }
             return Ok();
+        }
+
+        [HttpGet, Route("Devedores/{page}/{qtdItem}")]
+        public IEnumerable<Devedores> getDevedores(int page,int qtdItem)
+        {
+                var x = _context.Devedores.ToList().Take(page * qtdItem).Skip((page * qtdItem) - qtdItem);
+                return x;
         }
     }
 }
