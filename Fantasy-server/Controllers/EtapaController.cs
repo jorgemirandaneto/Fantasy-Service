@@ -6,6 +6,7 @@ using Fantasy_server.Dao;
 using Fantasy_server.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Fantasy_server.Controllers
 {
@@ -115,10 +116,13 @@ namespace Fantasy_server.Controllers
         }
 
         [HttpGet, Route("Devedores/{page}/{qtdItem}")]
-        public IEnumerable<Devedores> getDevedores(int page,int qtdItem)
+        public IEnumerable<Devedores> getDevedores(int page, int qtdItem)
         {
-                var x = _context.Devedores.ToList().Take(page * qtdItem).Skip((page * qtdItem) - qtdItem);
-                return x;
+            var x = _context.Devedores.
+            Include(g => g.participante_ganhador).
+            Include(p => p.participante_perdedor).
+            ToList().Take(page * qtdItem).Skip((page * qtdItem) - qtdItem);                                
+            return x;
         }
     }
 }
