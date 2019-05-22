@@ -15,6 +15,7 @@ namespace Fantasy_server.Models
         public int fk_participante_ganhardor { get; set; }
 
         [ForeignKey("fk_participante_perdedor")]
+
         public virtual Participante participante_perdedor { get; set; }
 
         public int fk_participante_perdedor { get; set; }
