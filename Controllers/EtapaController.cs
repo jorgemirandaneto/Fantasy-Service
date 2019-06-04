@@ -44,6 +44,7 @@ namespace Fantasy_server.Controllers
             return NoContent();
         }
 
+        //teste
         [HttpGet, Route("NotasEtapas/{idEtapa}")]
         public IEnumerable<EtapaParticipante> getNota(int idEtapa)
         {
