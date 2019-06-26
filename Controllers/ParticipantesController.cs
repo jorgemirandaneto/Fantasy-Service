@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using Fantasy_server.Comum;
 using Fantasy_server.Context;
 using Fantasy_server.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Fantasy_server.Controllers {
+namespace Fantasy_server.Controllers
+{
     [Produces ("application/json")]
     [Route ("api/Participantes")]
-    [EnableCors ("AllowSpecificOrigin")]
     public class ParticipantesController : ControllerBase {
         private readonly FantasyContext _context;
 

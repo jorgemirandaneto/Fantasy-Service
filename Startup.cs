@@ -39,11 +39,6 @@ namespace Fantasy_server
             services.AddTransient<UserDao>();
             services.AddTransient<EtapaParticipanteDao>();
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowSpecificOrigin",
-                builder => builder.WithOrigins());
-            });
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                .AddJwtBearer(options =>
                {
