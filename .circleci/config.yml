@@ -1,8 +1,8 @@
 version: 2
 jobs:
  build:
-  filters:
-   branches:  
+   branches:
+      filters:  
        only:
          - master
    machine: true
