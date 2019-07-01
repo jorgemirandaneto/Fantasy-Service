@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Fantasy_server.Context;
-using Fantasy_server.Dao;
-using Fantasy_server.Models;
+using FantasyServer.Context;
+using FantasyServer.Dao;
+using FantasyServer.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Fantasy_server.Controllers
+namespace FantasyServer.Controllers
 {
     [Produces("application/json")]
     [Route("api/Etapa")]

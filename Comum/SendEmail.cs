@@ -1,4 +1,4 @@
-namespace Fantasy_server.Comum
+namespace FantasyServer.Comum
 {
     public class SendEmail
     {

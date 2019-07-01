@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Fantasy_server.Models
+namespace FantasyServer.Models
 {
     public class EtapaParticipanteVM
     {

@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Fantasy_server.Context;
-using Fantasy_server.Models;
+using FantasyServer.Context;
+using FantasyServer.Models;
 
-namespace Fantasy_server.Dao
+namespace FantasyServer.Dao
 {
     public class EtapaParticipanteDao
     {

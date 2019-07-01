@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Fantasy_server.Comum;
-using Fantasy_server.Context;
-using Fantasy_server.Models;
+using FantasyServer.Comum;
+using FantasyServer.Context;
+using FantasyServer.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Fantasy_server.Controllers
+namespace FantasyServer.Controllers
 {
     [Produces ("application/json")]
     [Route ("api/Participantes")]

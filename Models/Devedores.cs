@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Fantasy_server.Models
+namespace FantasyServer.Models
 {
     [Table("devedores", Schema = "develop")]
     public class Devedores

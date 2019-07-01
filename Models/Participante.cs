@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Fantasy_server.Models
+namespace FantasyServer.Models
 {
     [Table("participante", Schema = "develop")]
     public class Participante
