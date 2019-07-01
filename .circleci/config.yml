@@ -1,9 +1,6 @@
 version: 2
 jobs:
  build:
-   branches:  
-       only:
-         - master
    machine: true
    steps:
      - checkout 
@@ -12,7 +9,6 @@ jobs:
      - run: |         
          docker info
          docker build -t aspnetapp -f Dockerfile .
-
      # deploy the image
      - run: |         
          docker login --username=$HEROKU_USERNAME --password=$HEROKU_API_KEY registry.heroku.com
@@ -20,3 +16,12 @@ jobs:
          docker push registry.heroku.com/$HEROKU_APP_NAME/web                
          curl https://cli-assets.heroku.com/install.sh | sh
          heroku container:release web -a $HEROKU_APP_NAME
+
+workflows:
+version: 2
+build_and_test:
+  jobs:
+    - build:
+        filters:
+          branches:
+            only: master
