@@ -20,10 +20,8 @@ namespace Fantasy_server.Controllers
 {
     [Route("api/[controller]")]
     public class LoginController : ControllerBase
-    {
-        [AllowAnonymous]
+    {        
         [HttpPost,Route("login")]
-        [EnableCors("AllowSpecificOrigin")]
         public IActionResult Login(
             [FromBody]User usuario,
             [FromServices]UserDao usersDao)
