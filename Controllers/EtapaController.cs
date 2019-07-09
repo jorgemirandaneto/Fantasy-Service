@@ -12,7 +12,6 @@ namespace FantasyServer.Controllers
 {
     [Produces("application/json")]
     [Route("api/Etapa")]
-    [EnableCors("AllowSpecificOrigin")]
     public class EtapaController : ControllerBase
     {
         private readonly FantasyContext _context;
