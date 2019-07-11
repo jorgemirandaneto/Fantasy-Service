@@ -7,9 +7,30 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Fantasy2.0/Fantasy2.0/Fantasy2.csproj"
+                "${workspaceFolder}/FantasyServer.csproj"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/FantasyServer.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/FantasyServer.csproj"
+            ],
+            "problemMatcher": "$tsc"
         }
     ]
 }

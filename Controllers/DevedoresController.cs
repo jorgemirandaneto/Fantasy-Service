@@ -28,9 +28,13 @@ namespace Fantasy_Service.Controllers
             return x;
         }
 
-        [HttpPost, Route("")]
+        [HttpPost, Route("/Pagamento")]
         public IActionResult postDevedores(int idDevedores)
         {
+            var devedor = this._context.Devedores.Find(idDevedores);
+            devedor.pago = "T";
+            this._context.Update(devedor);
+            this._context.SaveChanges();
             return Ok();
         }
     }
