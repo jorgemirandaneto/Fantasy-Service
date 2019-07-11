@@ -64,7 +64,7 @@ namespace FantasyServer
           .AllowCredentials());
             
             app.UseAuthentication();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
