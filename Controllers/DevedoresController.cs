@@ -18,17 +18,18 @@ namespace Fantasy_Service.Controllers
             this._context = context;
         }
 
-        [HttpGet, Route("/{page}/{qtdItem}")]
+        [HttpGet, Route("devedores/{page}/{qtdItem}")]
         public IEnumerable<Devedores> getDevedores(int page, int qtdItem)
         {
-            var x = _context.Devedores.
+            var devedores = _context.Devedores.
             Include(g => g.participante_ganhador).
             Include(p => p.participante_perdedor).
+            Include(e => e.etapa).
             ToList().Take(page * qtdItem).Skip((page * qtdItem) - qtdItem);
-            return x;
+            return devedores;
         }
 
-        [HttpPost, Route("/Pagamento")]
+        [HttpPost, Route("pagamento/{idDevedores}")]
         public IActionResult postDevedores(int idDevedores)
         {
             var devedor = this._context.Devedores.Find(idDevedores);
