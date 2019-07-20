@@ -26,7 +26,7 @@ namespace Fantasy_Service.Controllers
             Include(g => g.participante_ganhador).
             Include(p => p.participante_perdedor).
             Include(e => e.etapa).
-            ToList().Take(page * qtdItem).Skip((page * qtdItem) - qtdItem);
+            ToList().OrderByDescending(x => x.pago).Take(page * qtdItem).Skip((page * qtdItem) - qtdItem);
                      
            var devedoresPagination = new DevedoresPagination
            {
