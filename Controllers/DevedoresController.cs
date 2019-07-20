@@ -25,6 +25,7 @@ namespace Fantasy_Service.Controllers
             var devedores = _context.Devedores.
             Include(g => g.participante_ganhador).
             Include(p => p.participante_perdedor).
+            Include(e => e.etapa).
             ToList().Take(page * qtdItem).Skip((page * qtdItem) - qtdItem);
                      
            var devedoresPagination = new DevedoresPagination
@@ -36,7 +37,7 @@ namespace Fantasy_Service.Controllers
             return Ok(devedoresPagination);
         }
 
-        [HttpPost, Route("/Pagamento")]
+        [HttpPost, Route("pagamento/{idDevedores}")]
         public IActionResult postDevedores(int idDevedores)
         {
             var devedor = this._context.Devedores.Find(idDevedores);
