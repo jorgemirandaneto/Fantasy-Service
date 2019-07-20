@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Fantasy_Service.Models;
 using FantasyServer.Context;
 using FantasyServer.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -18,15 +19,22 @@ namespace Fantasy_Service.Controllers
             this._context = context;
         }
 
-        [HttpGet, Route("devedores/{page}/{qtdItem}")]
-        public IEnumerable<Devedores> getDevedores(int page, int qtdItem)
+        [HttpGet, Route("list/{page}/{qtdItem}")]        
+        public IActionResult getDevedores(int page, int qtdItem)
         {
             var devedores = _context.Devedores.
             Include(g => g.participante_ganhador).
             Include(p => p.participante_perdedor).
             Include(e => e.etapa).
             ToList().Take(page * qtdItem).Skip((page * qtdItem) - qtdItem);
-            return devedores;
+                     
+           var devedoresPagination = new DevedoresPagination
+           {
+               TotalPaginas = _context.Devedores.ToList().Count / qtdItem,
+               devedores = devedores
+           };
+            
+            return Ok(devedoresPagination);
         }
 
         [HttpPost, Route("pagamento/{idDevedores}")]
