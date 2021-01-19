@@ -18,3 +18,5 @@ nos surfistas escolhidos pelo aplicativo do fantasy da wsl.
 ![README.md](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
 [![CircleCI](https://circleci.com/gh/jorgemirandaneto/Fantasy-Service.svg?style=svg)](https://circleci.com/gh/jorgemirandaneto/Fantasy-Service)
+
+q
